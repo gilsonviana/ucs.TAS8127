@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { useCartStore } from "@/context/CartStore";
 import { useCategories } from "@/hooks/useCatalog";
@@ -11,12 +12,19 @@ import ImageCard from "@/components/ImageCard";
 
 export default function HomePage() {
   const { isAuthenticated } = useAuth();
+  const router = useRouter();
   const cartCount = useCartStore((s) => s.totalItems());
   const categories = useCategories(); // Used for CategoryNavBar
 
+  function handleSearchSubmit(query: string) {
+    if (query.trim()) {
+      router.push(`/categories?search=${encodeURIComponent(query)}`);
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} />
+      <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} onSearchSubmit={handleSearchSubmit} />
 
       {/* Hero */}
       <div className="w-full h-80 relative">

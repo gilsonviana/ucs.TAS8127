@@ -11,12 +11,14 @@ interface NavigationBarProps {
   cartCount?: number;
   isAuthenticated?: boolean;
   onSearch?: (query: string) => void;
+  onSearchSubmit?: (query: string) => void;
 }
 
 export default function NavigationBar({
   cartCount = 0,
   isAuthenticated = false,
   onSearch,
+  onSearchSubmit,
 }: NavigationBarProps) {
   const t = useTranslations("nav");
   const [query, setQuery] = useState("");
@@ -24,6 +26,10 @@ export default function NavigationBar({
   function handleSearchChange(value: string) {
     setQuery(value);
     onSearch?.(value);
+  }
+
+  function handleSearchSubmit(value: string) {
+    onSearchSubmit?.(value);
   }
 
   return (
@@ -37,7 +43,7 @@ export default function NavigationBar({
         </Link>
 
         <div className="flex-1 max-w-md">
-          <SearchBar value={query} onChange={handleSearchChange} />
+          <SearchBar value={query} onChange={handleSearchChange} onSubmit={handleSearchSubmit} />
         </div>
 
         <nav className="flex items-center gap-1 shrink-0">
