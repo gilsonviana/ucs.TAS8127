@@ -28,7 +28,7 @@ export default function HomePage() {
 
       {/* Hero */}
       <div className="w-full h-80 relative">
-        <Image src="/home-hero.png" alt="Hero" fill className="object-cover" />
+        <Image src="/home-hero.png" alt="Hero" fill className="object-cover" priority />
       </div>
 
       <CategoryNavBar categories={categories} navigateToCategories={true} />

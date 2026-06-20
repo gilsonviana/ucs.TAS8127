@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ShoppingCart, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -22,6 +22,11 @@ export default function NavigationBar({
 }: NavigationBarProps) {
   const t = useTranslations("nav");
   const [query, setQuery] = useState("");
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   function handleSearchChange(value: string) {
     setQuery(value);
@@ -50,7 +55,7 @@ export default function NavigationBar({
           <Link href="/carrinho">
             <IconButton variant="ghost" label={t("cart")} className="relative">
               <ShoppingCart size={20} />
-              {cartCount > 0 && (
+              {isMounted && cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-primary text-white text-xs-body rounded-full w-4 h-4 flex items-center justify-center leading-none">
                   {cartCount > 9 ? "9+" : cartCount}
                 </span>
