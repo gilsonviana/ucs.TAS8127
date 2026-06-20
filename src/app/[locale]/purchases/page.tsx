@@ -32,9 +32,24 @@ export default function PurchasesPage() {
   const router = useRouter();
   const t = useTranslations("orders");
   const cartCount = useCartStore((s) => s.totalItems());
+  const addItem = useCartStore((s) => s.addItem);
 
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const handleBuyAgain = (order: Order) => {
+    order.items.forEach((item) => {
+      for (let i = 0; i < item.quantity; i++) {
+        addItem({
+          productId: item.product_id,
+          name: item.name,
+          price: item.unit_price,
+          imageUrl: item.image_url ?? undefined,
+        });
+      }
+    });
+    router.push("/cart");
+  };
 
   useEffect(() => {
     if (!isAuthenticated) { router.push("/login"); return; }
@@ -79,6 +94,7 @@ export default function PurchasesPage() {
                   unitPrice: i.unit_price,
                   imageUrl: i.image_url ?? undefined,
                 }))}
+                onBuyAgain={() => handleBuyAgain(order)}
               />
             ))}
           </div>
