@@ -59,7 +59,8 @@
     "order": "Pedido",
     "date": "Data",
     "total": "Total",
-    "startShopping": "Começar a comprar"
+    "startShopping": "Começar a comprar",
+    "buyAgain": "Comprar novamente"
   },
   "auth": {
     "login": {
