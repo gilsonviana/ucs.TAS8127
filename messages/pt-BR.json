@@ -116,6 +116,21 @@
     "adminPanel": "Painel administrativo",
     "skeletonLoading": "Carregando..."
   },
+  "account": {
+    "title": "Minha Conta",
+    "userInfo": "Informações do Usuário",
+    "email": "E-mail",
+    "updateName": "Atualizar Nome",
+    "updateButton": "Atualizar",
+    "updating": "Atualizando...",
+    "changePassword": "Alterar Senha",
+    "currentPassword": "Senha Atual",
+    "newPassword": "Nova Senha",
+    "confirmPassword": "Confirmar Senha",
+    "changeButton": "Alterar Senha",
+    "nameUpdated": "Nome atualizado com sucesso!",
+    "passwordUpdated": "Senha atualizada com sucesso!"
+  },
   "errors": {
     "required": "Este campo é obrigatório",
     "invalidEmail": "Endereço de e-mail inválido",

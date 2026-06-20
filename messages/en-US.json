@@ -116,6 +116,21 @@
     "adminPanel": "Admin panel",
     "skeletonLoading": "Loading..."
   },
+  "account": {
+    "title": "My Account",
+    "userInfo": "User Information",
+    "email": "Email",
+    "updateName": "Update Name",
+    "updateButton": "Update",
+    "updating": "Updating...",
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "changeButton": "Change Password",
+    "nameUpdated": "Name updated successfully!",
+    "passwordUpdated": "Password updated successfully!"
+  },
   "errors": {
     "required": "This field is required",
     "invalidEmail": "Invalid email address",
