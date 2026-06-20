@@ -21,8 +21,8 @@ export default function CategorySidebar({ categories, selected, onSelect }: Cate
           <button
             onClick={() => onSelect(null)}
             aria-pressed={selected === null}
-            className={`w-full text-left px-3 py-2 rounded-md text-sm-body transition
-              ${selected === null ? "bg-primary text-white" : "text-dark hover:bg-gray-200"}`}
+            className={`w-full text-left px-3 py-2 text-sm-body transition
+              ${selected === null ? "border-l-2 border-primary font-bold text-dark" : "text-dark hover:bg-gray-200"}`}
           >
             {t("all")}
           </button>
@@ -32,8 +32,8 @@ export default function CategorySidebar({ categories, selected, onSelect }: Cate
             <button
               onClick={() => onSelect(cat.id)}
               aria-pressed={selected === cat.id}
-              className={`w-full text-left px-3 py-2 rounded-md text-sm-body transition
-                ${selected === cat.id ? "bg-primary text-white" : "text-dark hover:bg-gray-200"}`}
+              className={`w-full text-left px-3 py-2 text-sm-body transition
+                ${selected === cat.id ? "border-l-2 border-primary font-bold text-dark" : "text-dark hover:bg-gray-200"}`}
             >
               {cat.name}
             </button>

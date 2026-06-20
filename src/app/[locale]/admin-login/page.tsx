@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4 bg-white">
+    <main className="flex flex-col items-center justify-center min-h-screen px-4 bg-primary">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-6">
         <div>
           <span className="text-primary font-bold text-title">⚡</span>
