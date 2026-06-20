@@ -36,7 +36,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} onSearch={handleSearch} />
 
       {/* Hero */}
@@ -68,11 +68,11 @@ export default function HomePage() {
         {loading ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="rounded-xl bg-white/10 animate-pulse h-64" />
+              <div key={i} className="rounded-xl bg-gray-200 animate-pulse h-64" />
             ))}
           </div>
         ) : products.length === 0 ? (
-          <p className="text-center text-gray-400 py-16">{t("noProductsFound")}</p>
+          <p className="text-center text-gray-600 py-16">{t("noProductsFound")}</p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {products.map((product) => (

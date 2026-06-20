@@ -27,10 +27,10 @@ export default function NavigationBar({
   }
 
   return (
-    <header className="bg-void shadow-md sticky top-0 z-50">
+    <header className="bg-primary shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="text-primary font-bold text-title">⚡</span>
+          <span className="text-white font-bold text-title">⚡</span>
           <span className="text-white font-bold text-body-bold hidden sm:block">
             TechStore
           </span>
