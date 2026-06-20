@@ -2,7 +2,7 @@
 
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type IconButtonVariant = "clean" | "button" | "ghost";
+type IconButtonVariant = "clean" | "button" | "ghost" | "gray";
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: IconButtonVariant;
@@ -24,6 +24,7 @@ export default function IconButton({
     clean: "p-1 text-dark border border-gray-200 hover:text-primary hover:border-primary",
     button: "p-2 bg-primary text-white hover:bg-primary/80",
     ghost: "p-1 text-white hover:opacity-80",
+    gray: "p-1 text-dark border border-gray-300 hover:bg-gray-100",
   };
 
   return (

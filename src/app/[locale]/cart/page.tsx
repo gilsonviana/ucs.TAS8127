@@ -32,7 +32,7 @@ export default function CartPage() {
     <div className="flex flex-col min-h-screen bg-white">
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} />
 
-      <main className="flex-1 max-w-4xl w-full mx-auto px-4 py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-8">
         <h1 className="text-page-title font-normal text-dark mb-6">{t("title")}</h1>
 
         {items.length === 0 ? (
@@ -59,7 +59,7 @@ export default function CartPage() {
                 />
               ))}
             </div>
-            <div className="w-full lg:w-72 shrink-0">
+              <div className="w-full lg:w-90 shrink-0">
               <CartSummary total={total} onCheckout={() => router.push("/checkout")} />
             </div>
           </div>

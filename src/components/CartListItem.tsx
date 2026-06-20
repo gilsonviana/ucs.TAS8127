@@ -32,7 +32,7 @@ export default function CartListItem({
   const tProduct = useTranslations("product");
 
   return (
-    <div className="flex gap-4 items-center bg-white rounded-xl p-3 shadow-sm">
+    <div className="flex gap-4 items-center border border-gray-200 p-3">
       <div className="relative w-16 h-16 shrink-0 bg-gray-100 rounded-md overflow-hidden">
         {imageUrl ? (
           <Image src={imageUrl} alt={name} fill className="object-cover" />

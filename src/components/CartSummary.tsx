@@ -13,10 +13,10 @@ export default function CartSummary({ total, onCheckout, disabled = false }: Car
   const t = useTranslations("cart");
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm flex flex-col gap-4">
+    <div className="border border-gray-200 p-6 flex flex-col gap-6">
       <div className="flex justify-between items-center">
-        <span className="text-body text-dark">{t("total")}</span>
-        <span className="text-title font-bold text-primary">${total.toFixed(2)}</span>
+        <span className="text-body-bold text-dark">{t("total")}</span>
+        <span className="text-page-title font-bold text-primary">${total.toFixed(2)}</span>
       </div>
       <Button variant="success" fullWidth onClick={onCheckout} disabled={disabled}>
         {t("checkout")}
