@@ -19,36 +19,34 @@ export default function PaymentRadio({ value, onChange }: PaymentRadioProps) {
   ];
 
   return (
-    <fieldset className="flex flex-col gap-4">
-      <div className="grid grid-cols-3 gap-3">
-        {options.map((opt) => (
-          <label key={opt.id} className="cursor-pointer">
+    <fieldset className="flex flex-col gap-3">
+      {options.map((opt) => (
+        <label key={opt.id} className="cursor-pointer">
+          <div
+            className={`border-2 rounded-lg p-4 flex items-center gap-4 transition ${
+              value === opt.id
+                ? "border-primary bg-primary/5"
+                : "border-gray-200 bg-gray-100 hover:border-primary/50"
+            }`}
+          >
             <input
               type="radio"
               name="payment"
               value={opt.id}
               checked={value === opt.id}
               onChange={() => onChange(opt.id)}
-              className="sr-only"
+              className="w-5 h-5 accent-dark cursor-pointer shrink-0"
             />
-            <div
-              className={`border-2 rounded-lg p-4 flex flex-col items-center gap-3 transition ${
-                value === opt.id
-                  ? "border-primary bg-primary/5"
-                  : "border-gray-200 bg-gray-100 hover:border-primary/50"
-              }`}
-            >
-              <div className="relative w-10 h-15 bg-white rounded border border-gray-300 flex items-center justify-center overflow-hidden">
-                {/* Placeholder for payment method image */}
-                <span className="text-xs text-gray-400">IMG</span>
-              </div>
-              <span className="text-xs-body font-medium text-dark text-center">
-                {opt.label}
-              </span>
+            <div className="relative w-10 h-15 bg-white rounded border border-gray-300 flex items-center justify-center overflow-hidden shrink-0">
+              {/* Placeholder for payment method image */}
+              <span className="text-xs text-gray-400">IMG</span>
             </div>
-          </label>
-        ))}
-      </div>
+            <span className="text-sm-body font-medium text-dark">
+              {opt.label}
+            </span>
+          </div>
+        </label>
+      ))}
     </fieldset>
   );
 }
