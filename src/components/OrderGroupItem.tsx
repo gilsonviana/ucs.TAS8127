@@ -41,7 +41,7 @@ export default function OrderGroupItem({
       </div>
       <div className="flex justify-end items-center px-4 py-4 border-t border-gray-200 gap-4">
         {onBuyAgain && (
-          <Button variant="primary" onClick={onBuyAgain}>
+          <Button variant="ghost" onClick={onBuyAgain}>
             {t("buyAgain")}
           </Button>
         )}

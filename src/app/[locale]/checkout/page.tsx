@@ -93,7 +93,7 @@ export default function CheckoutPage() {
         ) : (
             <div className="flex flex-col lg:flex-row gap-6 items-start">
             <div className="flex-1 flex flex-col gap-6">
-              <div className="border border-gray-200 p-6">
+                <div>
                 <h2 className="text-section-title font-bold text-dark mb-4">{t("paymentMethod")}</h2>
                 <PaymentRadio value={paymentMethod} onChange={setPaymentMethod} />
               </div>

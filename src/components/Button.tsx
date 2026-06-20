@@ -2,7 +2,7 @@
 
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonVariant = "primary" | "success" | "danger";
+type ButtonVariant = "primary" | "success" | "danger" | "ghost";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -24,6 +24,7 @@ export default function Button({
     primary: "bg-primary text-white hover:bg-primary/80 focus:ring-primary",
     success: "bg-success text-white hover:bg-success/80 focus:ring-success",
     danger: "bg-error text-white hover:bg-error/80 focus:ring-error",
+    ghost: "bg-transparent text-dark border border-gray-300 hover:bg-gray-100 focus:ring-gray-400",
   };
 
   return (
