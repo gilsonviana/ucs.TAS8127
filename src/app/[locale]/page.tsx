@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "@/i18n/navigation";
-import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useAuth } from "@/context/AuthContext";
 import { useCartStore } from "@/context/CartStore";
@@ -12,7 +12,7 @@ import CategoryNavBar from "@/components/CategoryNavBar";
 import ProductCard from "@/components/ProductCard";
 
 export default function HomePage() {
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
   const router = useRouter();
   const t = useTranslations("home");
   const cartCount = useCartStore((s) => s.totalItems());
@@ -40,26 +40,8 @@ export default function HomePage() {
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} onSearch={handleSearch} />
 
       {/* Hero */}
-      <div className="w-full bg-gradient-to-r from-void to-dark flex items-center justify-center py-20 px-4">
-        <div className="text-center">
-          <h1 className="text-page-title text-white font-normal mb-3">{t("title")}</h1>
-          <p className="text-body text-gray-400 mb-6">{t("subtitle")}</p>
-          {!isAuthenticated && (
-            <div className="flex gap-4 justify-center">
-              <Link href="/signup" className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition text-body font-bold">
-                {t("getStarted")}
-              </Link>
-              <Link href="/login" className="px-6 py-2 border border-white/20 text-white rounded-md hover:bg-white/10 transition text-body">
-                Login
-              </Link>
-            </div>
-          )}
-          {isAuthenticated && (
-            <button onClick={logout} className="text-sm-body text-gray-400 hover:text-error transition">
-              Logout
-            </button>
-          )}
-        </div>
+      <div className="w-full h-80 relative">
+        <Image src="/home-hero.png" alt="Hero" fill className="object-cover" />
       </div>
 
       <CategoryNavBar categories={categories} selected={selectedCategory} onSelect={setSelectedCategory} />
