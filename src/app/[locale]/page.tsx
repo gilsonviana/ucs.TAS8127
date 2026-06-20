@@ -12,7 +12,7 @@ import ImageCard from "@/components/ImageCard";
 export default function HomePage() {
   const { isAuthenticated } = useAuth();
   const cartCount = useCartStore((s) => s.totalItems());
-  const categories = useCategories();
+  const categories = useCategories(); // Used for CategoryNavBar
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -28,46 +28,18 @@ export default function HomePage() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-8">
         <h2 className="text-section-title font-bold text-dark mb-6">Confira nossas produtos</h2>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {(() => {
-            const casesId = categories.find((c) => c.name === "Cases")?.id;
-            return casesId ? (
-              <Link href={`/categories?category=${casesId}`}>
-                <ImageCard src="/gabinete-card.png" alt="Gabinete" title="Gabinetes" />
-              </Link>
-            ) : (
-              <ImageCard src="/gabinete-card.png" alt="Gabinete" title="Gabinetes" />
-            );
-          })()}
-          {(() => {
-            const peripheralsId = categories.find((c) => c.name === "Peripherals")?.id;
-            return peripheralsId ? (
-              <Link href={`/categories?category=${peripheralsId}`}>
-                <ImageCard src="/headphone-card.png" alt="Headphone" title="Fones de ouvido" />
-              </Link>
-            ) : (
-              <ImageCard src="/headphone-card.png" alt="Headphone" title="Fones de ouvido" />
-            );
-          })()}
-          {(() => {
-            const memoryId = categories.find((c) => c.name === "Memory")?.id;
-            return memoryId ? (
-              <Link href={`/categories?category=${memoryId}`}>
-                <ImageCard src="/memoria-card.png" alt="Memória" title="Memórias" />
-              </Link>
-            ) : (
-              <ImageCard src="/memoria-card.png" alt="Memória" title="Memórias" />
-            );
-          })()}
-          {(() => {
-            const gpuId = categories.find((c) => c.name === "GPUs")?.id;
-            return gpuId ? (
-              <Link href={`/categories?category=${gpuId}`}>
-                <ImageCard src="/placa-video-card.png" alt="Placa de Vídeo" title="Placas de Vídeo" />
-              </Link>
-            ) : (
-              <ImageCard src="/placa-video-card.png" alt="Placa de Vídeo" title="Placas de Vídeo" />
-            );
-          })()}
+          <Link href="/categories?category=8">
+            <ImageCard src="/gabinete-card.png" alt="Gabinete" title="Gabinetes" />
+          </Link>
+          <Link href="/categories?category=6">
+            <ImageCard src="/headphone-card.png" alt="Headphone" title="Fones de ouvido" />
+          </Link>
+          <Link href="/categories?category=3">
+            <ImageCard src="/memoria-card.png" alt="Memória" title="Memórias" />
+          </Link>
+          <Link href="/categories?category=5">
+            <ImageCard src="/placa-video-card.png" alt="Placa de Vídeo" title="Placas de Vídeo" />
+          </Link>
         </div>
       </main>
     </div>
