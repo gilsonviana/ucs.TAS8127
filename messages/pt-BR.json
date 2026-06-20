@@ -29,7 +29,9 @@
   "cart": {
     "title": "Carrinho de compras",
     "empty": "Seu carrinho está vazio.",
-    "total": "Total",
+    "subtotal": "Subtotal",
+    "freight": "Frete",
+    "totalOrder": "Total do pedido",
     "checkout": "Finalizar compra",
     "remove": "Remover",
     "continueShopping": "Continuar comprando"

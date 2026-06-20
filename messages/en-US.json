@@ -29,7 +29,9 @@
   "cart": {
     "title": "Shopping Cart",
     "empty": "Your cart is empty.",
-    "total": "Total",
+    "subtotal": "Subtotal",
+    "freight": "Freight",
+    "totalOrder": "Order Total",
     "checkout": "Proceed to checkout",
     "remove": "Remove",
     "continueShopping": "Continue shopping"
