@@ -48,7 +48,7 @@ export default function PurchasesPage() {
         });
       }
     });
-    router.push("/cart");
+    router.push("/carrinho");
   };
 
   useEffect(() => {

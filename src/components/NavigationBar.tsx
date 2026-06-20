@@ -47,7 +47,7 @@ export default function NavigationBar({
         </div>
 
         <nav className="flex items-center gap-1 shrink-0">
-          <Link href="/cart">
+          <Link href="/carrinho">
             <IconButton variant="ghost" label={t("cart")} className="relative">
               <ShoppingCart size={20} />
               {cartCount > 0 && (
@@ -57,7 +57,7 @@ export default function NavigationBar({
               )}
             </IconButton>
           </Link>
-          <Link href={isAuthenticated ? "/account" : "/login"}>
+          <Link href={isAuthenticated ? "/conta" : "/login"}>
             <IconButton variant="ghost" label={isAuthenticated ? t("account") : t("login")}>
               <User size={20} />
             </IconButton>

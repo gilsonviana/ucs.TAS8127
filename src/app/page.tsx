@@ -18,7 +18,7 @@ export default function HomePage() {
 
   function handleSearchSubmit(query: string) {
     if (query.trim()) {
-      router.push(`/categories?search=${encodeURIComponent(query)}`);
+      router.push(`/produtos?search=${encodeURIComponent(query)}`);
     }
   }
 
@@ -36,16 +36,16 @@ export default function HomePage() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-8">
         <h2 className="text-section-title font-bold text-dark mb-6">Confira nossas produtos</h2>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Link href="/categories?category=8">
+          <Link href="/produtos?category=8">
             <ImageCard src="/gabinete-card.png" alt="Gabinete" title="Gabinetes" />
           </Link>
-          <Link href="/categories?category=6">
+          <Link href="/produtos?category=6">
             <ImageCard src="/headphone-card.png" alt="Headphone" title="Fones de ouvido" />
           </Link>
-          <Link href="/categories?category=3">
+          <Link href="/produtos?category=3">
             <ImageCard src="/memoria-card.png" alt="Memória" title="Memórias" />
           </Link>
-          <Link href="/categories?category=5">
+          <Link href="/produtos?category=5">
             <ImageCard src="/placa-video-card.png" alt="Placa de Vídeo" title="Placas de Vídeo" />
           </Link>
         </div>

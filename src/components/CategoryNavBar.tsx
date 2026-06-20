@@ -25,13 +25,13 @@ export default function CategoryNavBar({ categories, selected, onSelect, navigat
       <div className="max-w-7xl mx-auto flex gap-2">
         {navigateToCategories ? (
           <>
-            <Link href="/categories" className={buttonClasses(selected === null)}>
+            <Link href="/produtos" className={buttonClasses(selected === null)}>
               {t("all")}
             </Link>
             {categories.map((cat) => (
               <Link
                 key={cat.id}
-                href={`/categories?category=${cat.id}`}
+                href={`/produtos?category=${cat.id}`}
                 className={buttonClasses(selected === cat.id)}
               >
                 {cat.name}

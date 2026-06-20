@@ -66,7 +66,7 @@ export default function CheckoutPage() {
             {t("orderPlacedDetail", { orderId: `#${placedOrderId}` })}
           </p>
           <div className="flex gap-4 mt-4 flex-wrap justify-center">
-            <Link href="/purchases" className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition text-body">
+            <Link href="/compras" className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition text-body">
               {t("viewMyOrders")}
             </Link>
             <Link href="/" className="px-6 py-2 border border-gray-300 text-dark rounded-md hover:bg-gray-100 transition text-body">
