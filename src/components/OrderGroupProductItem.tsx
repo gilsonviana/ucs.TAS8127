@@ -5,6 +5,7 @@ interface OrderGroupProductItemProps {
   quantity: number;
   unitPrice: number;
   imageUrl?: string;
+  showPrice?: boolean;
 }
 
 export default function OrderGroupProductItem({
@@ -12,6 +13,7 @@ export default function OrderGroupProductItem({
   quantity,
   unitPrice,
   imageUrl,
+  showPrice = true,
 }: OrderGroupProductItemProps) {
   return (
     <div className="flex gap-3 items-center py-2">
@@ -28,9 +30,11 @@ export default function OrderGroupProductItem({
         <p className="text-sm-body font-medium text-dark truncate">{name}</p>
         <p className="text-xs-body text-gray-500">x{quantity}</p>
       </div>
-      <span className="text-sm-body font-bold text-primary shrink-0">
-        ${(unitPrice * quantity).toFixed(2)}
-      </span>
+      {showPrice && (
+        <span className="text-sm-body font-bold text-primary shrink-0">
+          ${(unitPrice * quantity).toFixed(2)}
+        </span>
+      )}
     </div>
   );
 }
