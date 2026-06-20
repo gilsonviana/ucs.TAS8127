@@ -114,7 +114,15 @@
     "totalOrders": "Total de pedidos",
     "couldNotAddCategory": "Não foi possível adicionar a categoria.",
     "adminPanel": "Painel administrativo",
-    "skeletonLoading": "Carregando..."
+    "skeletonLoading": "Carregando...",
+    "status": "Status",
+    "statusPending": "Pendente",
+    "statusFulfilled": "Atendido",
+    "sortBy": "Ordenar por",
+    "date": "Data",
+    "total": "Total",
+    "fulfill": "Atender",
+    "all": "Todos"
   },
   "account": {
     "title": "Minha Conta",

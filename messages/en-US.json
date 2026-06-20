@@ -114,7 +114,15 @@
     "totalOrders": "Total orders",
     "couldNotAddCategory": "Could not add category.",
     "adminPanel": "Admin panel",
-    "skeletonLoading": "Loading..."
+    "skeletonLoading": "Loading...",
+    "status": "Status",
+    "statusPending": "Pending",
+    "statusFulfilled": "Fulfilled",
+    "sortBy": "Sort by",
+    "date": "Date",
+    "total": "Total",
+    "fulfill": "Fulfill",
+    "all": "All"
   },
   "account": {
     "title": "My Account",
