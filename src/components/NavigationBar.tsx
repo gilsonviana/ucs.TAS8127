@@ -42,7 +42,7 @@ export default function NavigationBar({
 
         <nav className="flex items-center gap-1 shrink-0">
           <Link href="/cart">
-            <IconButton variant="clean" label={t("cart")} className="relative text-white">
+            <IconButton variant="ghost" label={t("cart")} className="relative">
               <ShoppingCart size={20} />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-primary text-white text-xs-body rounded-full w-4 h-4 flex items-center justify-center leading-none">
@@ -52,7 +52,7 @@ export default function NavigationBar({
             </IconButton>
           </Link>
           <Link href={isAuthenticated ? "/account" : "/login"}>
-            <IconButton variant="clean" label={isAuthenticated ? t("account") : t("login")} className="text-white">
+            <IconButton variant="ghost" label={isAuthenticated ? t("account") : t("login")}>
               <User size={20} />
             </IconButton>
           </Link>
