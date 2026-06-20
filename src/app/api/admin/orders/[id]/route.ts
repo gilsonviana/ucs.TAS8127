@@ -7,7 +7,10 @@ const updateSchema = z.object({
   status: z.enum(["pending", "fulfilled"]),
 });
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> | { id: string } }
+) {
   const auth = requireAuth(req, "admin");
   if (isAuthError(auth)) return auth;
 
@@ -22,7 +25,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   }
 
   const { status } = parsed.data;
-  const orderId = parseInt(params.id);
+  const resolvedParams = await Promise.resolve(params);
+  const orderId = parseInt(resolvedParams.id);
 
   if (isNaN(orderId)) {
     return NextResponse.json({ error: "Invalid order ID" }, { status: 400 });

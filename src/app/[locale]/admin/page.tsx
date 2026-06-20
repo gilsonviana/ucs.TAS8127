@@ -36,14 +36,14 @@ export default function AdminDashboardPage() {
   }, [token]);
 
   const cards = [
-    { label: "Total orders", value: stats.orders, icon: ShoppingBag, color: "text-primary" },
-    { label: "Products", value: stats.products, icon: Package, color: "text-success" },
+    { label: "Pedidos", value: stats.orders, icon: ShoppingBag, color: "text-primary" },
+    { label: "Produtos", value: stats.products, icon: Package, color: "text-success" },
     { label: "Categories", value: stats.categories, icon: Tag, color: "text-warning" },
   ];
 
   return (
     <main className="p-8">
-      <h1 className="text-page-title font-normal text-dark mb-8">Dashboard</h1>
+      <h1 className="text-page-title font-normal text-dark mb-8">Painel de controle</h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {cards.map((card) => {
           const Icon = card.icon;

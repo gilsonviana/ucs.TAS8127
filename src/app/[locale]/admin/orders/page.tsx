@@ -40,12 +40,17 @@ export default function AdminOrdersPage() {
   }, [token, statusFilter, sortBy]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleStatusChange(orderId: number, status: "fulfilled") {
-    await axios.patch(
-      `/api/admin/orders/${orderId}`,
-      { status },
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
-    loadOrders();
+    try {
+      await axios.patch(
+        `/api/admin/orders/${orderId}`,
+        { status },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      loadOrders();
+    } catch (error: any) {
+      console.error("Error updating order status:", error.response?.data || error.message);
+      alert(error.response?.data?.error || "Failed to update order status");
+    }
   }
 
   return (
