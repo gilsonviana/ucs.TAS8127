@@ -94,6 +94,7 @@ export default function PurchasesPage() {
                   unitPrice: i.unit_price,
                   imageUrl: i.image_url ?? undefined,
                 }))}
+                showProductPrices={false}
                 onBuyAgain={() => handleBuyAgain(order)}
               />
             ))}
