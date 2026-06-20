@@ -18,7 +18,7 @@ if (!adminExists) {
 }
 
 // Categories
-const categoryNames = ["Processors", "Motherboards", "Memory", "Storage", "GPUs", "Peripherals", "Cooling", "Cases"];
+const categoryNames = ["Processadores", "Placa Mãe", "Memórias", "Armazenamento", "GPUs", "Periféricos", "Cooler", "Gabinetes"];
 for (const name of categoryNames) {
   db.prepare("INSERT OR IGNORE INTO categories (name) VALUES (?)").run(name);
 }
@@ -26,8 +26,8 @@ console.log("Categories seeded.");
 
 // Sample products
 const gpuCat = db.prepare("SELECT id FROM categories WHERE name = ?").get("GPUs") as { id: number };
-const memCat = db.prepare("SELECT id FROM categories WHERE name = ?").get("Memory") as { id: number };
-const cpuCat = db.prepare("SELECT id FROM categories WHERE name = ?").get("Processors") as { id: number };
+const memCat = db.prepare("SELECT id FROM categories WHERE name = ?").get("Memórias") as { id: number };
+const cpuCat = db.prepare("SELECT id FROM categories WHERE name = ?").get("Processadores") as { id: number };
 
 const products = [
   { name: "RTX 4070 Ti", description: "NVIDIA GeForce RTX 4070 Ti 12GB", price: 799.99, category_id: gpuCat.id, stock: 15 },
