@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useAuth } from "@/context/AuthContext";
@@ -12,7 +13,7 @@ import CategorySidebar from "@/components/CategorySidebar";
 import CategoryNavBar from "@/components/CategoryNavBar";
 import ProductCard from "@/components/ProductCard";
 
-export default function CategoriesPage() {
+function CategoriesContent() {
   const { isAuthenticated } = useAuth();
   const router = useRouter();
   const t = useTranslations("categories");
@@ -79,5 +80,13 @@ export default function CategoriesPage() {
         </main>
       </div>
     </div>
+  );
+}
+
+export default function CategoriesPage() {
+  return (
+    <Suspense>
+      <CategoriesContent />
+    </Suspense>
   );
 }

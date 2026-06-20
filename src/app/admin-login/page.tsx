@@ -24,10 +24,10 @@ interface LoginResponse {
 }
 
 export default function AdminLoginPage() {
+  const t = useTranslations("auth.login");
+  const tErr = useTranslations("errors");
   const { login } = useAuth();
   const router = useRouter();
-  const t = useTranslations("auth.adminLogin");
-  const tAuth = useTranslations("auth.login");
   const [serverError, setServerError] = useState<string | null>(null);
 
   const {
@@ -39,32 +39,47 @@ export default function AdminLoginPage() {
   async function onSubmit(data: FormValues) {
     setServerError(null);
     try {
-      const res = await axios.post<LoginResponse>("/api/admin/login", data);
+      const res = await axios.post<LoginResponse>("/api/auth/login", data);
+      if (res.data.user.role !== "admin") {
+        setServerError(tErr("generic"));
+        return;
+      }
       login(res.data.token, res.data.user);
-      router.push("/admin" as "/");
+      router.push("/admin");
     } catch {
-      setServerError(t("invalidCredentials"));
+      setServerError(tErr("generic"));
     }
   }
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen px-4 bg-primary">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-6">
-        <div>
-          <span className="text-primary font-bold text-title">⚡</span>
-          <span className="text-dark font-bold text-body-bold ml-2">TechStore</span>
-          <h1 className="text-section-title font-bold text-dark mt-3">{t("title")}</h1>
-          <p className="text-xs-body text-gray-600">{t("subtitle")}</p>
-        </div>
+        <h1 className="text-page-title font-normal text-dark">{t("title")}</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-          <TextInput label={tAuth("email")} id="email" type="email" error={errors.email?.message} {...register("email")} />
-          <TextInput label={tAuth("password")} id="password" type="password" error={errors.password?.message} {...register("password")} />
+          <TextInput
+            label={t("email")}
+            id="email"
+            type="email"
+            error={errors.email?.message}
+            {...register("email")}
+          />
+          <TextInput
+            label={t("password")}
+            id="password"
+            type="password"
+            error={errors.password?.message}
+            {...register("password")}
+          />
 
-          {serverError && <p className="text-sm text-error" role="alert">{serverError}</p>}
+          {serverError && (
+            <p className="text-sm text-error" role="alert">
+              {serverError}
+            </p>
+          )}
 
           <Button type="submit" variant="primary" fullWidth disabled={isSubmitting}>
-            {isSubmitting ? "..." : tAuth("submit")}
+            {isSubmitting ? "..." : t("submit")}
           </Button>
         </form>
       </div>

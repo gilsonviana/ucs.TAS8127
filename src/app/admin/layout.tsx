@@ -33,8 +33,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   ];
 
   function isActive(href: string, exact?: boolean) {
-    const localePath = pathname.replace(/^\/(en-US|pt-BR)/, "");
-    return exact ? localePath === href : localePath.startsWith(href);
+    return exact ? pathname === href : pathname.startsWith(href);
   }
 
   const sidebarContent = (
