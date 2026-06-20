@@ -21,7 +21,7 @@ export default function IconButton({
     "inline-flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-primary rounded-md";
 
   const variants: Record<IconButtonVariant, string> = {
-    clean: "p-1 text-dark hover:text-primary",
+    clean: "p-1 text-dark border border-gray-200 hover:text-primary hover:border-primary",
     button: "p-2 bg-primary text-white hover:bg-primary/80",
   };
 

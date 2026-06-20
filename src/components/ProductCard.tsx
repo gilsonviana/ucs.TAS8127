@@ -23,7 +23,7 @@ export default function ProductCard({
   const t = useTranslations("product");
 
   return (
-    <div className="rounded-xl overflow-hidden shadow-md bg-white flex flex-col">
+    <div className="border border-gray-200 overflow-hidden flex flex-col">
       <div className="relative w-full h-48 bg-gray-100">
         {imageUrl ? (
           <Image src={imageUrl} alt={name} fill className="object-cover" />
@@ -40,7 +40,7 @@ export default function ProductCard({
             ${price.toFixed(2)}
           </span>
           <IconButton
-            variant="button"
+            variant="clean"
             label={t("addToCart")}
             onClick={() => onAddToCart(id)}
           >
