@@ -44,7 +44,7 @@ export default function PurchasesPage() {
           productId: item.product_id,
           name: item.name,
           price: item.unit_price,
-          imageUrl: item.image_url ?? undefined,
+          imageUrl: item.image_url ?? "",
         });
       }
     });

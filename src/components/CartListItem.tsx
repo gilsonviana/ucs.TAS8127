@@ -34,7 +34,7 @@ export default function CartListItem({
   return (
     <div className="flex gap-4 items-center border border-gray-200 p-3">
       <div className="relative w-16 h-16 shrink-0 bg-gray-100 rounded-md overflow-hidden">
-        {imageUrl ? (
+        {imageUrl && imageUrl.trim() ? (
           <Image src={imageUrl} alt={name} fill className="object-cover" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs-body">

@@ -39,7 +39,7 @@ function CategoriesContent() {
     if (!isAuthenticated) { router.push("/login"); return; }
     const product = products.find((p) => p.id === productId);
     if (!product) return;
-    addItem({ productId: product.id, name: product.name, price: product.price, imageUrl: product.image_url ?? undefined });
+    addItem({ productId: product.id, name: product.name, price: product.price, imageUrl: product.image_url ?? "" });
   }
 
   const heading = selectedCategory
