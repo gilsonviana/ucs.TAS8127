@@ -27,6 +27,16 @@
   --font-weight-page-title: 400;
 }
 
+@layer base {
+  .text-body-bold {
+    @apply font-bold;
+  }
+
+  .text-section-title {
+    @apply font-bold;
+  }
+}
+
 body {
   background-color: var(--color-void);
   color: var(--color-dark);

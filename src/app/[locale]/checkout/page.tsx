@@ -9,6 +9,7 @@ import { useCartStore } from "@/context/CartStore";
 import axios from "axios";
 import NavigationBar from "@/components/NavigationBar";
 import PaymentRadio from "@/components/PaymentRadio";
+import CartSummary from "@/components/CartSummary";
 import Button from "@/components/Button";
 import { CheckCircle } from "lucide-react";
 
@@ -81,7 +82,7 @@ export default function CheckoutPage() {
     <div className="flex flex-col min-h-screen bg-white">
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} />
 
-      <main className="flex-1 max-w-4xl w-full mx-auto px-4 py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-8">
         <h1 className="text-page-title font-normal text-dark mb-6">{t("title")}</h1>
 
         {items.length === 0 ? (
@@ -90,33 +91,15 @@ export default function CheckoutPage() {
             <Link href="/" className="text-primary hover:underline text-sm-body">{t("goShopping")}</Link>
           </div>
         ) : (
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-            <div className="flex-1 bg-white rounded-2xl p-6 shadow-sm w-full">
-              <h2 className="text-section-title font-bold text-dark mb-4">{t("orderSummary")}</h2>
-              <div className="divide-y divide-gray-100">
-                {items.map((item) => (
-                  <div key={item.productId} className="flex justify-between py-3 text-sm-body text-dark">
-                    <span className="flex-1 truncate pr-4">
-                      {item.name} <span className="text-gray-400">x{item.quantity}</span>
-                    </span>
-                    <span className="font-bold text-primary shrink-0">${(item.price * item.quantity).toFixed(2)}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-between pt-4 border-t border-gray-100 mt-2">
-                <span className="text-body font-bold text-dark">Total</span>
-                <span className="text-title font-bold text-primary">${total.toFixed(2)}</span>
-              </div>
-            </div>
-
-            <div className="w-full lg:w-72 shrink-0 flex flex-col gap-6">
-              <div className="bg-gray-100 rounded-2xl p-6">
+            <div className="flex flex-col lg:flex-row gap-6 items-start">
+            <div className="flex-1 flex flex-col gap-6">
+              <div className="border border-gray-200 p-6">
+                <h2 className="text-section-title font-bold text-dark mb-4">{t("paymentMethod")}</h2>
                 <PaymentRadio value={paymentMethod} onChange={setPaymentMethod} />
               </div>
-              {error && <p className="text-sm text-error text-center" role="alert">{error}</p>}
-              <Button variant="success" fullWidth onClick={handlePlaceOrder} disabled={loading}>
-                {loading ? t("placingOrder") : t("placeOrder")}
-              </Button>
+            </div>
+            <div className="w-full lg:w-90 shrink-0">
+              <CartSummary total={total} onCheckout={handlePlaceOrder} disabled={loading} />
             </div>
           </div>
         )}
