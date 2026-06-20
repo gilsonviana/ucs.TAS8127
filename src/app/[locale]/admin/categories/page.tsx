@@ -52,7 +52,7 @@ export default function AdminCategoriesPage() {
 
   return (
     <main className="p-8">
-      <h1 className="text-page-title font-normal text-white mb-6">{t("categories")}</h1>
+      <h1 className="text-page-title font-normal text-dark mb-6">{t("categories")}</h1>
 
       <div className="flex gap-3 mb-8 max-w-md">
         <TextInput
@@ -71,7 +71,7 @@ export default function AdminCategoriesPage() {
         {categories.map((cat) => (
           <CategoryEditRow key={cat.id} id={cat.id} name={cat.name} onSave={handleSave} onDelete={handleDelete} />
         ))}
-        {categories.length === 0 && <p className="text-gray-400 text-sm-body">{t("noCategories")}</p>}
+        {categories.length === 0 && <p className="text-gray-600 text-sm-body">{t("noCategories")}</p>}
       </div>
     </main>
   );

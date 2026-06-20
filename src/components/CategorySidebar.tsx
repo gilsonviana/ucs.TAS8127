@@ -15,14 +15,14 @@ export default function CategorySidebar({ categories, selected, onSelect }: Cate
 
   return (
     <aside className="w-56 shrink-0" aria-label={t("title")}>
-      <h2 className="text-section-title font-bold text-white mb-4">{t("title")}</h2>
+      <h2 className="text-section-title font-bold text-dark mb-4">{t("title")}</h2>
       <ul className="flex flex-col gap-1" role="list">
         <li>
           <button
             onClick={() => onSelect(null)}
             aria-pressed={selected === null}
             className={`w-full text-left px-3 py-2 rounded-md text-sm-body transition
-              ${selected === null ? "bg-primary text-white" : "text-white hover:bg-white/10"}`}
+              ${selected === null ? "bg-primary text-white" : "text-dark hover:bg-gray-200"}`}
           >
             {t("all")}
           </button>
@@ -33,7 +33,7 @@ export default function CategorySidebar({ categories, selected, onSelect }: Cate
               onClick={() => onSelect(cat.id)}
               aria-pressed={selected === cat.id}
               className={`w-full text-left px-3 py-2 rounded-md text-sm-body transition
-                ${selected === cat.id ? "bg-primary text-white" : "text-white hover:bg-white/10"}`}
+                ${selected === cat.id ? "bg-primary text-white" : "text-dark hover:bg-gray-200"}`}
             >
               {cat.name}
             </button>

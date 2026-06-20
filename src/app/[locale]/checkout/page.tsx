@@ -56,19 +56,19 @@ export default function CheckoutPage() {
 
   if (placedOrderId !== null) {
     return (
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-white">
         <NavigationBar cartCount={0} isAuthenticated={isAuthenticated} />
         <main className="flex-1 flex flex-col items-center justify-center gap-6 px-4 text-center">
           <CheckCircle size={64} className="text-success" />
-          <h1 className="text-page-title font-normal text-white">{t("orderPlaced")}</h1>
-          <p className="text-body text-gray-400">
+          <h1 className="text-page-title font-normal text-dark">{t("orderPlaced")}</h1>
+          <p className="text-body text-gray-600">
             {t("orderPlacedDetail", { orderId: `#${placedOrderId}` })}
           </p>
           <div className="flex gap-4 mt-4 flex-wrap justify-center">
             <Link href="/purchases" className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition text-body">
               {t("viewMyOrders")}
             </Link>
-            <Link href="/" className="px-6 py-2 border border-white/20 text-white rounded-md hover:bg-white/10 transition text-body">
+            <Link href="/" className="px-6 py-2 border border-gray-300 text-dark rounded-md hover:bg-gray-100 transition text-body">
               {t("continueShopping")}
             </Link>
           </div>
@@ -78,15 +78,15 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} />
 
       <main className="flex-1 max-w-4xl w-full mx-auto px-4 py-8">
-        <h1 className="text-page-title font-normal text-white mb-6">{t("title")}</h1>
+        <h1 className="text-page-title font-normal text-dark mb-6">{t("title")}</h1>
 
         {items.length === 0 ? (
           <div className="flex flex-col items-center gap-4 py-24 text-center">
-            <p className="text-body text-gray-400">{t("emptyCart")}</p>
+            <p className="text-body text-gray-600">{t("emptyCart")}</p>
             <Link href="/" className="text-primary hover:underline text-sm-body">{t("goShopping")}</Link>
           </div>
         ) : (
@@ -110,7 +110,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="w-full lg:w-72 shrink-0 flex flex-col gap-6">
-              <div className="bg-void/60 rounded-2xl p-6">
+              <div className="bg-gray-100 rounded-2xl p-6">
                 <PaymentRadio value={paymentMethod} onChange={setPaymentMethod} />
               </div>
               {error && <p className="text-sm text-error text-center" role="alert">{error}</p>}

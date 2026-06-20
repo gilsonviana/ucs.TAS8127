@@ -28,16 +28,16 @@ export default function AdminOrdersPage() {
 
   return (
     <main className="p-8">
-      <h1 className="text-page-title font-normal text-white mb-6">{t("orders")}</h1>
+      <h1 className="text-page-title font-normal text-dark mb-6">{t("orders")}</h1>
 
       {loading ? (
         <div className="flex flex-col gap-2 max-w-3xl">
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="rounded-lg bg-white/10 animate-pulse h-14" aria-hidden="true" />
+            <div key={i} className="rounded-lg bg-gray-200 animate-pulse h-14" aria-hidden="true" />
           ))}
         </div>
       ) : orders.length === 0 ? (
-        <p className="text-gray-400 text-sm-body">{t("noOrders")}</p>
+        <p className="text-gray-600 text-sm-body">{t("noOrders")}</p>
       ) : (
         <div className="flex flex-col gap-2 max-w-3xl">
           {orders.map((order) => (

@@ -43,19 +43,19 @@ export default function AdminDashboardPage() {
 
   return (
     <main className="p-8">
-      <h1 className="text-page-title font-normal text-white mb-8">Dashboard</h1>
+      <h1 className="text-page-title font-normal text-dark mb-8">Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {cards.map((card) => {
           const Icon = card.icon;
           return (
             <div
               key={card.label}
-              className="bg-dark rounded-2xl p-6 flex items-center gap-4 shadow"
+              className="bg-gray-100 rounded-2xl p-6 flex items-center gap-4 shadow"
             >
               <Icon size={36} className={card.color} />
               <div>
-                <p className="text-xs-body text-gray-400">{card.label}</p>
-                <p className="text-page-title font-bold text-white">{card.value}</p>
+                <p className="text-xs-body text-gray-600">{card.label}</p>
+                <p className="text-page-title font-bold text-dark">{card.value}</p>
               </div>
             </div>
           );

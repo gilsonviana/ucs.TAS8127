@@ -53,7 +53,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4">
+    <main className="flex flex-col items-center justify-center min-h-screen px-4 bg-white">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-6">
         <h1 className="text-page-title font-normal text-dark">{t("title")}</h1>
 

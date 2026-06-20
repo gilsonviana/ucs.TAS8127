@@ -29,15 +29,15 @@ export default function CartPage() {
   if (!isAuthenticated) return null;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} />
 
       <main className="flex-1 max-w-4xl w-full mx-auto px-4 py-8">
-        <h1 className="text-page-title font-normal text-white mb-6">{t("title")}</h1>
+        <h1 className="text-page-title font-normal text-dark mb-6">{t("title")}</h1>
 
         {items.length === 0 ? (
           <div className="flex flex-col items-center gap-4 py-24 text-center">
-            <p className="text-body text-gray-400">{t("empty")}</p>
+            <p className="text-body text-gray-600">{t("empty")}</p>
             <Link href="/" className="text-primary hover:underline text-sm-body">
               {t("continueShopping")}
             </Link>

@@ -47,21 +47,21 @@ export default function PurchasesPage() {
   if (!isAuthenticated) return null;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} />
 
       <main className="flex-1 max-w-3xl w-full mx-auto px-4 py-8">
-        <h1 className="text-page-title font-normal text-white mb-6">{t("title")}</h1>
+        <h1 className="text-page-title font-normal text-dark mb-6">{t("title")}</h1>
 
         {loading ? (
           <div className="flex flex-col gap-4">
             {Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="rounded-xl bg-white/10 animate-pulse h-40" />
+              <div key={i} className="rounded-xl bg-gray-200 animate-pulse h-40" />
             ))}
           </div>
         ) : orders.length === 0 ? (
           <div className="flex flex-col items-center gap-4 py-24 text-center">
-            <p className="text-body text-gray-400">{t("empty")}</p>
+            <p className="text-body text-gray-600">{t("empty")}</p>
             <Link href="/" className="text-primary hover:underline text-sm-body">{t("startShopping")}</Link>
           </div>
         ) : (

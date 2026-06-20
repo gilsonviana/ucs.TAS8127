@@ -65,7 +65,7 @@ export default function AdminProductsPage() {
   return (
     <main className="p-8">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-page-title font-normal text-white">{t("products")}</h1>
+        <h1 className="text-page-title font-normal text-dark">{t("products")}</h1>
         <Button variant="primary" onClick={() => { setCreating(true); setEditing(null); }}>
           {t("addProduct")}
         </Button>
@@ -83,7 +83,7 @@ export default function AdminProductsPage() {
             onDelete={handleDelete}
           />
         ))}
-        {products.length === 0 && <p className="text-gray-400 text-sm-body">{t("noProducts")}</p>}
+        {products.length === 0 && <p className="text-gray-600 text-sm-body">{t("noProducts")}</p>}
       </div>
 
       {isModalOpen && (

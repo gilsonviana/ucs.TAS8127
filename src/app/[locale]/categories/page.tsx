@@ -21,9 +21,15 @@ export default function CategoriesPage() {
   const addItem = useCartStore((s) => s.addItem);
 
   const [search, setSearch] = useState(searchParams.get("search") ?? "");
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(
+    searchParams.get("category") ? parseInt(searchParams.get("category")!) : null
+  );
 
-  useEffect(() => { setSearch(searchParams.get("search") ?? ""); }, [searchParams]);
+  useEffect(() => {
+    setSearch(searchParams.get("search") ?? "");
+    const categoryParam = searchParams.get("category");
+    setSelectedCategory(categoryParam ? parseInt(categoryParam) : null);
+  }, [searchParams]);
 
   const categories = useCategories();
   const { products, loading } = useProducts(search, selectedCategory);
@@ -40,7 +46,7 @@ export default function CategoriesPage() {
     : t("allProducts");
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <NavigationBar cartCount={cartCount} isAuthenticated={isAuthenticated} onSearch={setSearch} />
 
       <div className="flex-1 max-w-7xl w-full mx-auto px-4 py-8 flex flex-col md:flex-row gap-6">
@@ -53,16 +59,16 @@ export default function CategoriesPage() {
         </div>
 
         <main className="flex-1 min-w-0">
-          <h1 className="text-section-title font-bold text-white mb-6">{heading}</h1>
+          <h1 className="text-section-title font-bold text-dark mb-6">{heading}</h1>
 
           {loading ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="rounded-xl bg-white/10 animate-pulse h-64" />
+                <div key={i} className="rounded-xl bg-gray-200 animate-pulse h-64" />
               ))}
             </div>
           ) : products.length === 0 ? (
-            <p className="text-gray-400 py-16 text-center">{t("noProductsFound")}</p>
+            <p className="text-gray-600 py-16 text-center">{t("noProductsFound")}</p>
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {products.map((product) => (

@@ -94,7 +94,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         </div>
       )}
 
-      <div className="flex-1 flex flex-col bg-void min-h-screen">
+      <div className="flex-1 flex flex-col bg-white min-h-screen">
         {/* Mobile topbar */}
         <div className="md:hidden flex items-center gap-3 bg-dark px-4 py-3 sticky top-0 z-40">
           <button
