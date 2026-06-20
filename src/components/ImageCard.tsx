@@ -8,8 +8,8 @@ interface ImageCardProps {
 
 export default function ImageCard({ src, alt, title }: ImageCardProps) {
   return (
-    <div className="rounded-xl overflow-hidden shadow-md flex flex-col">
-      <div className="relative w-full h-48">
+    <div className="flex flex-col">
+      <div className="relative w-full aspect-[1/1.375]">
         <Image src={src} alt={alt} fill className="object-cover" />
       </div>
       <div className="p-3 bg-white">
