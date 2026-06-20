@@ -7,6 +7,7 @@ import axios from "axios";
 import ProductRow from "@/components/ProductRow";
 import ProductEditForm, { type ProductFormValues } from "@/components/ProductEditForm";
 import Button from "@/components/Button";
+import SearchBar from "@/components/SearchBar";
 import { X } from "lucide-react";
 
 interface Product {
@@ -31,6 +32,7 @@ export default function AdminProductsPage() {
   const [editing, setEditing] = useState<Product | null>(null);
   const [creating, setCreating] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   function loadProducts() {
     axios.get<Product[]>("/api/admin/products", { headers }).then((r) => setProducts(r.data));
@@ -71,19 +73,27 @@ export default function AdminProductsPage() {
         </Button>
       </div>
 
+      <div className="mb-6 max-w-2xl">
+        <SearchBar value={searchQuery} onChange={setSearchQuery} />
+      </div>
+
       <div className="flex flex-col gap-2 max-w-2xl">
-        {products.map((product) => (
-          <ProductRow
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            imageUrl={product.image_url ?? undefined}
-            onEdit={(id) => { setEditing(products.find((p) => p.id === id) ?? null); setCreating(false); }}
-            onDelete={handleDelete}
-          />
-        ))}
-        {products.length === 0 && <p className="text-gray-600 text-sm-body">{t("noProducts")}</p>}
+        {products
+          .filter((p) => p.name.toLowerCase().includes(searchQuery.toLowerCase()))
+          .map((product) => (
+            <ProductRow
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              imageUrl={product.image_url ?? undefined}
+              onEdit={(id) => { setEditing(products.find((p) => p.id === id) ?? null); setCreating(false); }}
+              onDelete={handleDelete}
+            />
+          ))}
+        {products.filter((p) => p.name.toLowerCase().includes(searchQuery.toLowerCase())).length === 0 && (
+          <p className="text-gray-600 text-sm-body">{t("noProducts")}</p>
+        )}
       </div>
 
       {isModalOpen && (
