@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# com.TechStore
+
+A full-stack e-commerce platform for computer hardware built with Next.js, TypeScript, SQLite, and Tailwind CSS.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Database:** SQLite via `better-sqlite3`
+- **Auth:** JWT (`jsonwebtoken`) + bcrypt
+- **State:** Zustand (cart) + React Context (auth)
+- **i18n:** next-intl — `en-US` and `pt-BR`
+- **Forms:** React Hook Form + Zod
+- **Testing:** Vitest + React Testing Library
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Seed the database
+
+Populates the admin user, 8 categories, and 6 sample products:
+
+```bash
+npm run seed
+```
+
+### 3. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Default Accounts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Admin
 
-## Learn More
+| Field    | Value                  |
+|----------|------------------------|
+| Email    | `admin@techstore.com`  |
+| Password | `admin1234`            |
+| Login    | `/admin-login`         |
 
-To learn more about Next.js, take a look at the following resources:
+The admin panel is accessible at `/admin` after logging in.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Customer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Register a new account at `/signup`.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Command         | Description                        |
+|-----------------|------------------------------------|
+| `npm run dev`   | Start development server           |
+| `npm run build` | Production build                   |
+| `npm run seed`  | Seed database with initial data    |
+| `npm test`      | Run Vitest test suite              |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+src/
+  app/
+    [locale]/       # All pages (en-US, pt-BR)
+      admin/        # Admin panel (protected)
+    api/            # API routes
+  components/       # Shared UI components
+  context/          # Auth context + cart store
+  db/               # SQLite client, migrations, seed
+  hooks/            # Data-fetching hooks
+  i18n/             # Routing, navigation, request config
+  lib/              # JWT, auth utilities
+messages/           # Translation files (en-US, pt-BR)
+```

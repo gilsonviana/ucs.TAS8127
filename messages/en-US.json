@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "search": "Search products...",
+    "cart": "Cart",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "account": "My account"
+  },
+  "home": {
+    "title": "Welcome to TechStore",
+    "subtitle": "The best computer hardware at your fingertips",
+    "getStarted": "Get started",
+    "noProductsFound": "No products found.",
+    "continueShopping": "Continue shopping"
+  },
+  "categories": {
+    "title": "Categories",
+    "all": "All",
+    "allProducts": "All Products",
+    "noProductsFound": "No products found."
+  },
+  "product": {
+    "addToCart": "Add to cart",
+    "price": "Price",
+    "outOfStock": "Out of stock",
+    "noImage": "No image"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty.",
+    "total": "Total",
+    "checkout": "Proceed to checkout",
+    "remove": "Remove",
+    "continueShopping": "Continue shopping"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "orderSummary": "Order summary",
+    "paymentMethod": "Payment method",
+    "creditCard": "Credit Card",
+    "debitCard": "Debit Card",
+    "pix": "PIX",
+    "bankSlip": "Bank Slip",
+    "placeOrder": "Place order",
+    "placingOrder": "Placing order...",
+    "orderPlaced": "Order placed successfully!",
+    "orderPlacedDetail": "Order {orderId} has been received.",
+    "viewMyOrders": "View my orders",
+    "continueShopping": "Continue shopping",
+    "emptyCart": "Your cart is empty.",
+    "goShopping": "Go shopping"
+  },
+  "orders": {
+    "title": "My Orders",
+    "empty": "You have no orders yet.",
+    "order": "Order",
+    "date": "Date",
+    "total": "Total",
+    "startShopping": "Start shopping"
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Login",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up"
+    },
+    "register": {
+      "title": "Create account",
+      "name": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "login": "Login",
+      "emailTaken": "Email already in use."
+    },
+    "adminLogin": {
+      "title": "Admin Login",
+      "subtitle": "Admin panel",
+      "invalidCredentials": "Invalid admin credentials."
+    }
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "categories": "Categories",
+    "products": "Products",
+    "orderNumber": "Order #",
+    "customer": "Customer",
+    "addCategory": "Add category",
+    "add": "Add",
+    "addProduct": "Add product",
+    "newProduct": "New product",
+    "editProduct": "Edit product",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "noOrders": "No orders yet.",
+    "noCategories": "No categories yet.",
+    "noProducts": "No products yet.",
+    "newCategoryPlaceholder": "New category name",
+    "deleteCategory": "Delete this category?",
+    "deleteProduct": "Delete this product?",
+    "totalOrders": "Total orders",
+    "couldNotAddCategory": "Could not add category.",
+    "adminPanel": "Admin panel",
+    "skeletonLoading": "Loading..."
+  },
+  "errors": {
+    "required": "This field is required",
+    "invalidEmail": "Invalid email address",
+    "passwordMin": "Password must be at least 8 characters",
+    "generic": "Something went wrong. Please try again."
+  }
+}

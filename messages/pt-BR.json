@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "search": "Buscar produtos...",
+    "cart": "Carrinho",
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "logout": "Sair",
+    "account": "Minha conta"
+  },
+  "home": {
+    "title": "Bem-vindo à TechStore",
+    "subtitle": "O melhor hardware de computadores ao seu alcance",
+    "getStarted": "Começar",
+    "noProductsFound": "Nenhum produto encontrado.",
+    "continueShopping": "Continuar comprando"
+  },
+  "categories": {
+    "title": "Categorias",
+    "all": "Todas",
+    "allProducts": "Todos os produtos",
+    "noProductsFound": "Nenhum produto encontrado."
+  },
+  "product": {
+    "addToCart": "Adicionar ao carrinho",
+    "price": "Preço",
+    "outOfStock": "Sem estoque",
+    "noImage": "Sem imagem"
+  },
+  "cart": {
+    "title": "Carrinho de compras",
+    "empty": "Seu carrinho está vazio.",
+    "total": "Total",
+    "checkout": "Finalizar compra",
+    "remove": "Remover",
+    "continueShopping": "Continuar comprando"
+  },
+  "checkout": {
+    "title": "Finalizar pedido",
+    "orderSummary": "Resumo do pedido",
+    "paymentMethod": "Forma de pagamento",
+    "creditCard": "Cartão de crédito",
+    "debitCard": "Cartão de débito",
+    "pix": "PIX",
+    "bankSlip": "Boleto bancário",
+    "placeOrder": "Confirmar pedido",
+    "placingOrder": "Confirmando pedido...",
+    "orderPlaced": "Pedido realizado com sucesso!",
+    "orderPlacedDetail": "Pedido {orderId} foi recebido.",
+    "viewMyOrders": "Ver meus pedidos",
+    "continueShopping": "Continuar comprando",
+    "emptyCart": "Seu carrinho está vazio.",
+    "goShopping": "Ir às compras"
+  },
+  "orders": {
+    "title": "Meus pedidos",
+    "empty": "Você ainda não tem pedidos.",
+    "order": "Pedido",
+    "date": "Data",
+    "total": "Total",
+    "startShopping": "Começar a comprar"
+  },
+  "auth": {
+    "login": {
+      "title": "Entrar",
+      "email": "E-mail",
+      "password": "Senha",
+      "submit": "Entrar",
+      "noAccount": "Não tem uma conta?",
+      "signUp": "Cadastre-se"
+    },
+    "register": {
+      "title": "Criar conta",
+      "name": "Nome completo",
+      "email": "E-mail",
+      "password": "Senha",
+      "submit": "Criar conta",
+      "hasAccount": "Já tem uma conta?",
+      "login": "Entrar",
+      "emailTaken": "E-mail já está em uso."
+    },
+    "adminLogin": {
+      "title": "Login Administrativo",
+      "subtitle": "Painel administrativo",
+      "invalidCredentials": "Credenciais de administrador inválidas."
+    }
+  },
+  "admin": {
+    "dashboard": "Painel",
+    "orders": "Pedidos",
+    "categories": "Categorias",
+    "products": "Produtos",
+    "orderNumber": "Pedido nº",
+    "customer": "Cliente",
+    "addCategory": "Adicionar categoria",
+    "add": "Adicionar",
+    "addProduct": "Adicionar produto",
+    "newProduct": "Novo produto",
+    "editProduct": "Editar produto",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Fechar",
+    "noOrders": "Nenhum pedido ainda.",
+    "noCategories": "Nenhuma categoria ainda.",
+    "noProducts": "Nenhum produto ainda.",
+    "newCategoryPlaceholder": "Nome da nova categoria",
+    "deleteCategory": "Excluir esta categoria?",
+    "deleteProduct": "Excluir este produto?",
+    "totalOrders": "Total de pedidos",
+    "couldNotAddCategory": "Não foi possível adicionar a categoria.",
+    "adminPanel": "Painel administrativo",
+    "skeletonLoading": "Carregando..."
+  },
+  "errors": {
+    "required": "Este campo é obrigatório",
+    "invalidEmail": "Endereço de e-mail inválido",
+    "passwordMin": "A senha deve ter pelo menos 8 caracteres",
+    "generic": "Algo deu errado. Tente novamente."
+  }
+}
