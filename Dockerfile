@@ -23,6 +23,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
 
 RUN npm run build
 
@@ -34,6 +35,10 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV DB_DIR=/app/data
+# Standalone server.js binds to $HOSTNAME; inside a container this defaults to
+# the container ID, making it unreachable. Force it to listen on all interfaces.
+ENV HOSTNAME=0.0.0.0
+ENV PORT=3000
 
 # Create a non-root user for security
 RUN addgroup --system --gid 1001 nodejs \
@@ -47,8 +52,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/public         ./public
 # Copy the full node_modules so better-sqlite3 native addon is present.
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules   ./node_modules
 
-# Copy seed script dependencies
-COPY --from=builder --chown=nextjs:nodejs /app/src/db         ./src/db
+# Copy src directory for seed script to use
+COPY --from=builder --chown=nextjs:nodejs /app/src            ./src
 COPY --from=builder --chown=nextjs:nodejs /app/package.json   ./package.json
 
 # Copy entrypoint
