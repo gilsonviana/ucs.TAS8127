@@ -2,7 +2,8 @@ import Database from "better-sqlite3";
 import path from "path";
 import { runMigrations } from "./migrations";
 
-const DB_PATH = path.join(process.cwd(), "techstore.db");
+const DB_DIR  = process.env.DB_DIR ?? process.cwd();
+const DB_PATH = path.join(DB_DIR, "techstore.db");
 
 let db: Database.Database | null = null;
 

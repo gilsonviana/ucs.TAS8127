@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: techstore:latest
+    container_name: techstore
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DB_DIR=/app/data
+      - JWT_SECRET=${JWT_SECRET:-dev-secret-change-in-production}
+    volumes:
+      - techstore_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  techstore_data:
+    driver: local
